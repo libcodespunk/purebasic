@@ -1,5 +1,8 @@
+XIncludeFile #CODESPUNK_HOME+"/purebasic/mod_Assertion.pb"
 XIncludeFile #CODESPUNK_HOME+"/purebasic/mod_SAL.pb"
 XIncludeFile #CODESPUNK_HOME+"/purebasic/mod_Type.pb"
+
+EnableExplicit
 
 DeclareModule Enum
   UseModule SAL
@@ -46,6 +49,7 @@ DeclareModule _Enum
 EndDeclareModule
 
 Module _Enum
+  UseModule Assertion
   UseModule SAL
   
   Procedure.OBJECT_POINTER new(_IN_OUT Map values.IObject(), _IN ordinal.ORDINAL_TYPE, _IN name.s)
@@ -63,6 +67,8 @@ Module _Enum
   EndProcedure
   
   Procedure.OBJECT_POINTER fromOrdinal(_IN_OUT Map values.IObject(), _IN ordinal.ORDINAL_TYPE)
+    ASSERT_MAP_KEY(values(),Str(ordinal))
+    
     ProcedureReturn values(Str(ordinal))
   EndProcedure
  
@@ -73,7 +79,7 @@ Module _Enum
       EndIf
     Next
     
-    DebuggerError("Invalid name")
+    ASSERT(#False,"Invalid name")
     
     ProcedureReturn #Null
   EndProcedure
@@ -90,3 +96,5 @@ Module _Enum
   vTable\name=@name()
   vTable\ordinal=@ordinal()
 EndModule
+
+DisableExplicit
