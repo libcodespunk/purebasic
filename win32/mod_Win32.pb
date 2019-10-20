@@ -1,6 +1,4 @@
-﻿#CODESPUNK_HOME="C:\home\development\sdk\codespunk\lib"
-
-XIncludeFile #CODESPUNK_HOME+"/purebasic/mod_SAL.pb"
+﻿XIncludeFile #CODESPUNK_HOME+"/purebasic/mod_SAL.pb"
 XIncludeFile #CODESPUNK_HOME+"/purebasic/mod_Type.pb"
 
 DeclareModule Win32
