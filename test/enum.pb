@@ -2,7 +2,6 @@ XIncludeFile #CODESPUNK_HOME+"/purebasic/mod_Enum.pb"
 XIncludeFile #CODESPUNK_HOME+"/purebasic/mod_SAL.pb"
 XIncludeFile #CODESPUNK_HOME+"/purebasic/mod_Type.pb"
 
-
 DeclareModule _ENUM_CARDINAL_DIRECTION
   UseModule SAL
   
