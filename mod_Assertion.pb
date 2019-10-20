@@ -3,10 +3,10 @@ DeclareModule Assertion
     CompilerIf #PB_Compiler_Debugger
     If Not Bool(expression_)
       If Not errorString_=""
-        DebuggerError("ASSERT: '"+errorString_+"' at line "+Str(#PB_Compiler_Line)+" in file "+#DQUOTE$+#PB_Compiler_File+#DQUOTE$)
+        DebuggerError("[ASSERT] Line "+Str(#PB_Compiler_Line)+": "+errorString_+" ("+#PB_Compiler_File+")")
       EndIf
       
-      Debug "ASSERT: Failure at line "+Str(#PB_Compiler_Line)+" in file "+#DQUOTE$+#PB_Compiler_File+#DQUOTE$
+      DebuggerError("[ASSERT] Line "+Str(#PB_Compiler_Line)+": Unhandled assertion ("+#PB_Compiler_File+")")
       
       End 1
     EndIf
