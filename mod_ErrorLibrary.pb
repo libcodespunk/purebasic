@@ -209,7 +209,7 @@ Module ErrorLibrary
         
         ForEach g_moduleState\lastErrorByThreadId()
           threadId=Val(MapKey(g_moduleState\lastErrorByThreadId()))
-          hThread=Win32::OpenThread(#THREAD_ALL_ACCESS,0,threadId)
+          hThread=Win32_KERNEL32::OpenThread(#THREAD_ALL_ACCESS,0,threadId)
           
           ASSERT(hThread<>0,"Unable to resolve thread handle: "+Str(hThread))
           
